@@ -3,11 +3,11 @@
   <title>Hexo</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://timei.me/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://timei.me/"/>
   <updated>2024-11-16T03:53:33.649Z</updated>
-  <id>http://example.com/</id>
+  <id>https://timei.me/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Redis</title>
-    <link href="http://example.com/2024/11/16/Redis/"/>
-    <id>http://example.com/2024/11/16/Redis/</id>
+    <link href="https://timei.me/2024/11/16/Redis/"/>
+    <id>https://timei.me/2024/11/16/Redis/</id>
     <published>2024-11-16T01:31:13.000Z</published>
     <updated>2024-11-16T03:53:33.649Z</updated>
     
@@ -38,8 +38,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2024/11/15/hello-world/"/>
-    <id>http://example.com/2024/11/15/hello-world/</id>
+    <link href="https://timei.me/2024/11/15/hello-world/"/>
+    <id>https://timei.me/2024/11/15/hello-world/</id>
     <published>2024-11-15T14:11:23.805Z</published>
     <updated>1985-10-26T08:15:00.000Z</updated>
     
