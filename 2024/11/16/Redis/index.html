@@ -259,7 +259,7 @@
         <section class="flex items-center gap-3 text-sm">
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="carbon-calendar" ></iconify-icon>
-            <time>2024-11-16</time>
+            <time>2024-11-29</time>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
@@ -269,7 +269,7 @@
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
             <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span>921 words</span>
+            <span>944 words</span>
           </span>
           
         </section>
@@ -278,11 +278,10 @@
   </header>
   <!-- content -->
   <article class="post-content prose m-auto slide-enter-content dark:prose-invert">
-    <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、<strong>缓存</strong>和消息中<br>间件。 它支持多种类型的数据结构</p>
+    <p>Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、<strong>缓存</strong>和消息中<br>间件。 它支持多种类型的数据结构</p>
 <h3 id="缓存（Cache）的概念"><a href="#缓存（Cache）的概念" class="headerlink" title="缓存（Cache）的概念"></a>缓存（Cache）的概念</h3><p>缓存是存储在计算机上的一个原始数据复制集，以便于访问。</p>
 <p><img src="http://img.cloves.top/imgs/image-20241113171033019.png" alt="image-20241113171033019"></p>
-<h3 id="缓存命中率的一些概念"><a href="#缓存命中率的一些概念" class="headerlink" title="缓存命中率的一些概念"></a>缓存命中率的一些概念</h3><img src="http://img.cloves.top/imgs/缓存设计命中率.png" alt="缓存设计命中率" style="zoom:150%;" />
-
+<h3 id="缓存命中率的一些概念"><a href="#缓存命中率的一些概念" class="headerlink" title="缓存命中率的一些概念"></a>缓存命中率的一些概念</h3><p><img src="http://img.cloves.top/imgs/%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1%E5%91%BD%E4%B8%AD%E7%8E%87.png" alt="img-cache"></p>
 <h3 id="Redis的命令"><a href="#Redis的命令" class="headerlink" title="Redis的命令"></a><strong>Redis的命令</strong></h3><ul>
 <li>指定database  select 0</li>
 </ul>
@@ -319,7 +318,7 @@
 </li>
 <li><p>lrem :删除列表中几个指定list类型数据</p>
 <ul>
-<li><pre><code>lrem key count value
+<li><pre><code class="TEXT">lrem key count value
 count &gt; 0 从前向后删除count个value
 count &lt;0 从后向前删除 绝对值（count） 个value
 count = 0 删除所有的value
@@ -353,7 +352,7 @@ count = 0 删除所有的value
 </li>
 </ul>
 <h4 id="操作失效时间"><a href="#操作失效时间" class="headerlink" title="操作失效时间"></a>操作失效时间</h4><ul>
-<li><p>EXPLRE 简写 EX  ex &lt;key&gt; &lt;ttl&gt;  用于生成键的同时设置生存时间（秒）   </p>
+<li><p>EXPLRE 简写 EX  ex &lt;key&gt; &lt;ttl&gt;  用于生成键的同时设置生存时间（秒）</p>
 <p>例 set  code test EX 180</p>
 </li>
 <li><p>PEXPIRE &lt;key&gt;  &lt;ttl&gt; 可以将 已有的键 key 的过期时间设置为 <strong>毫秒</strong> 不加 P 是秒</p>
@@ -373,7 +372,9 @@ count = 0 删除所有的value
 <p>输入Multi命令开始，输入的命令都会依次进入命令队列中，但不会执行。<br>输入Exec后，Redis会将之前的命令队列中的命令依次执行。<br>组队的过程中可以通过discard来放弃组队。</p>
 <h4 id="事务的错误处理"><a href="#事务的错误处理" class="headerlink" title="事务的错误处理"></a>事务的错误处理</h4><p>组队阶段某个命令出现了报告错误，执行时整个的所有队列会都会被取消。<br>执行阶段某个命令报出了错误，则只有报错的命令不会被执行，而其他的命令都会执行，不会回滚。</p>
 <h3 id="Redis的高可用"><a href="#Redis的高可用" class="headerlink" title="Redis的高可用"></a>Redis的高可用</h3><p>在Redis中，实现高可用的技术主要包括持久化、复制、哨兵和集群。</p>
-<h4 id="数据的持久化（数据落盘）"><a href="#数据的持久化（数据落盘）" class="headerlink" title="数据的持久化（数据落盘）"></a>数据的持久化（数据落盘）</h4><h5 id="RDB-Redis-DataBase"><a href="#RDB-Redis-DataBase" class="headerlink" title="RDB(Redis DataBase)"></a>RDB(Redis DataBase)</h5><h5 id="AOF-Append-Only-File"><a href="#AOF-Append-Only-File" class="headerlink" title="AOF(Append Only File)"></a>AOF(Append Only File)</h5>
+<h4 id="数据的持久化（数据落盘）"><a href="#数据的持久化（数据落盘）" class="headerlink" title="数据的持久化（数据落盘）"></a>数据的持久化（数据落盘）</h4><h5 id="RDB-Redis-DataBase"><a href="#RDB-Redis-DataBase" class="headerlink" title="RDB(Redis DataBase)"></a>RDB(Redis DataBase)</h5><p>  会损失较长时间的数据（分钟级别）</p>
+<h5 id="AOF-Append-Only-File"><a href="#AOF-Append-Only-File" class="headerlink" title="AOF(Append Only File)"></a>AOF(Append Only File)</h5><p>  会损失1秒钟的数据</p>
+
   </article>
   <!-- tag -->
   <div class="mt-12 pt-6 border-t border-gray-200">
